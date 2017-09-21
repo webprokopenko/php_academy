@@ -16,3 +16,6 @@ echo "<p>";
 echo gettype($c);
 echo "<p>";
 echo gettype($d);
+echo "<p>";
+$e = is_integer($a);
+var_dump($e);
