@@ -11,7 +11,7 @@ $vars = ['name'=>'Oscar','color'=>'green','favorite'=>1];
 
 $quryString = http_build_query($vars);
 $url = '/headers/select.php?'.$quryString;
-$cookieString = http_build_query($vars);
+$cookieString = http_build_cookie($vars);
 echo $url;
 echo "<br>";
 echo $cookieString;
