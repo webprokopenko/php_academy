@@ -16,6 +16,10 @@ class Office{
 	public $postal_code;
 	public $territory;
 
+	public function __construct( array $office) {
+		$this->createDataOffice($office);
+	}
+
 	public function createDataOffice(array $office){
 		 if (!$this->validate($office))
 		    throw new \Exception('Office not validate',1);

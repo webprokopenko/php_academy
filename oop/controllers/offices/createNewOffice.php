@@ -3,9 +3,10 @@ require_once '../../models_data/Office.php';
 require_once '../../models/RecordOffices.php';
 var_dump($_POST);
 //1 шаг Создать модель (объект) Office
-$office = new \models_data\Office();
+
 try{
-	$office->createDataOffice($_POST);
+	$office = new \models_data\Office($_POST);
+
 }catch (Exception $e){
 	if ($e->getCode() == 1){
 		//отправить телеграм
