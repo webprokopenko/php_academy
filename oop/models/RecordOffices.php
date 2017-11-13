@@ -10,12 +10,25 @@ require_once '../models_data/Office.php';
 use models_data\Office;
 
 class RecordOffices{
+	private $db;
+
+	public function __construct() {
+		$this->getConnection();
+	}
+
+	private function getConnection(){
+		$params = require_once 'config/db_params.php';
+		$dsn = "mysql:host={$params['host']}; dbname={$params['dbname']}";
+		$db = new PDO($dsn,$params['user'],$params['password']);
+		$db->exec("set names utf8");
+
+		$this->db = $db;
+	}
 	public function createNewOffice(Office $office){
-		$db = Db::getConnection();
 
 		$sql_insert_office = "INSERT INTO offices (city,phone,address,state,country,postal_code,territory) ";
 		$sql_insert_office.=" VALUES(:city,:phone,:address,:state,:country,:postal_code,:territory)";
-		$result1 = $db->prepare($sql_insert_office);
+		$result1 = $this->db->prepare($sql_insert_office);
 		$result1->bindParam(':city',$office->city,PDO::PARAM_STR);
 		$result1->bindParam(':phone',$office->phone,PDO::PARAM_STR);
 		$result1->bindParam(':address',$office->address,PDO::PARAM_STR);

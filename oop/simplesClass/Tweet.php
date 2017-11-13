@@ -23,6 +23,9 @@ class Tweet{
 
 $tweet = new Tweet();
 
-$id = $tweet->from("test@gmail.com")->withStatus('PHP 7')->send();
+$id = $tweet
+	->from("test@gmail.com")
+	->withStatus('PHP 7')
+	->send();
 
 var_dump($tweet->from('test@gmail.com'));
