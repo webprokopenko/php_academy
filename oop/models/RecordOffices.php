@@ -9,7 +9,7 @@ require_once '../models_data/Office.php';
  */
 use models_data\Office;
 
-class Offices{
+class RecordOffices{
 	public function createNewOffice(Office $office){
 		$db = Db::getConnection();
 
@@ -38,7 +38,7 @@ class Offices{
 		$result->setFetchMode(PDO::FETCH_ASSOC);
 		$result->execute();
 		$office = new Office();
-		return  $office->createDataOffice($result->fetch());
+		//return  $office->createDataOffice($result->fetch());
 	}
 }
 
