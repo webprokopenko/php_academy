@@ -15,9 +15,18 @@ class Office{
 	public $country;
 	public $postal_code;
 	public $territory;
+	public $arr = [];
 
 	public function __construct( array $office) {
 		$this->createDataOffice($office);
+	}
+
+	public function __get( $name ) {
+		if (isset($this->arr[$name]))
+			return $this->arr[$name];
+		else{
+			return "Fields not found";
+		}
 	}
 
 	public function createDataOffice(array $office){

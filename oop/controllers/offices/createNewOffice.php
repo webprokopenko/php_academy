@@ -6,7 +6,7 @@ var_dump($_POST);
 
 try{
 	$office = new \models_data\Office($_POST);
-
+	$office->ter;
 }catch (Exception $e){
 	if ($e->getCode() == 1){
 		//отправить телеграм
