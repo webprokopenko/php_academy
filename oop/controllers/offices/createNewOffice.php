@@ -14,7 +14,6 @@ try{
 	}
 }
 
-
 //2 шаг создаение объекта для работы с БД
 $recordOffice = new RecordOffices();
 try{
