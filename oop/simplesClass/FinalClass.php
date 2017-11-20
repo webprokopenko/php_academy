@@ -31,7 +31,7 @@ class simpleClass2 extends simpleClass1{
 
 	}
 	public function notFinalMethod(): bool {
-		return true;
+		parent::finalMethod();
 	}
 }
 $simpleObject2 = new simpleClass2();

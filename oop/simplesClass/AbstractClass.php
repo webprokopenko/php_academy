@@ -48,7 +48,9 @@ abstract class Database{
 	}
 
 }
+abstract class Datatbase2 extends Database{
 
+}
 class MySQL extends Database{
 	public function connect( $server, $username, $password, $database ) {
 		// TODO: Implement connect() method.
@@ -64,7 +66,7 @@ class MySQL extends Database{
 	}
 }
 class Oracle extends Database{
-	public function connect( $server, $username, $password, $database ) {
+	protected function connect( $server, $username, $password, $database ) {
 		// TODO: Implement connect() method.
 	}
 	public function query( $sql ) {
