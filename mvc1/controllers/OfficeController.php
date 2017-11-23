@@ -8,8 +8,9 @@
 class OfficeController{
 	public function actionIndex() {
 		$officeRecord = new RecordOffices();
-		var_dump($officeRecord->getOffices());
+		$offices = $officeRecord->getOffices();
 
+		require_once '../views/office/ListOffices.php';
 	}
 
 	public function actionCreateOffice() {
