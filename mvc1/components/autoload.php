@@ -10,15 +10,15 @@ function __autoload($className)
 {
 	//Массив папок, в которых могут находиться необходимые классы
 	$array_path = [
-		'/models/',
-		'/components/',
-		'/controllers/'
+		"models",
+		'components',
+		'controllers'
 	];
 
 	//Проходим по массиву папок
 	foreach ($array_path as $path ){
 		//Формируем имя и путь к файлу с классом
-		$path = ROOT. $path . $className . '.php';
+		$path = "..".DIRECTORY_SEPARATOR. $path .DIRECTORY_SEPARATOR .$className . '.php';
 
 		if (is_file($path))
 			require_once $path;

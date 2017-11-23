@@ -7,10 +7,10 @@
  */
 class ContactController{
 	public function actionIndex() {
-		echo __FILE__;
+		echo "This is a Index of Contact";
 	}
 
 	public function actionSport() {
-
+		echo "This is a Sport of Contact";
 	}
 }
