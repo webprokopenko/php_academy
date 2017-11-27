@@ -40,15 +40,14 @@ class RecordOffices{
 
 	}
 
-	public function getOffice( int $id ) : Office {
-		$db  =Db::getConnection();
+	public function getOffice( int $id ) : array {
+
 		$sql_select_office_id = "SELECT * FROM offices WHERE id = :id";
-		$result = $db->prepare($sql_select_office_id);
+		$result = $this->db->prepare($sql_select_office_id);
 		$result->bindParam(':id',$id);
 		$result->setFetchMode(PDO::FETCH_ASSOC);
 		$result->execute();
-		$office = new Office();
-		//return  $office->createDataOffice($result->fetch());
+		return $result->fetch();
 	}
 
 	public function getOffices() {
@@ -58,6 +57,10 @@ class RecordOffices{
 		$result->execute();
 
 		return $result->fetchAll();
+	}
+
+	public function updateOffice( array $office ) {
+
 	}
 }
 

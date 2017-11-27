@@ -9,8 +9,8 @@ class OfficeController{
 	public function actionIndex() {
 		$officeRecord = new RecordOffices();
 		$offices = $officeRecord->getOffices();
-
-		require_once '../views/office/ListOffices.php';
+		$test='test';
+		include ($_SERVER['DOCUMENT_ROOT'].'/../views/office/ListOffices.php');
 	}
 
 	public function actionCreateOffice() {
@@ -26,8 +26,18 @@ class OfficeController{
 		}catch (Exception $e){
 			echo $e->getMessage();
 		}
+	}
 
+	public function actionUpdateOffice($id) {
+		try{
+			$officeRecord = new RecordOffices();
+			$office = $officeRecord->getOffice($id);
 
+			include_once ('../views/office/UpdateOfficeForm.php');
+
+		}catch(Exception $e){
+			echo $e->getMessage();
+		}
 	}
 
 }
