@@ -10,7 +10,9 @@ class OfficeController{
 		$officeRecord = new RecordOffices();
 		$offices = $officeRecord->getOffices();
 		$test='test';
+		include ($_SERVER['DOCUMENT_ROOT'].'/../views/site/header.php');
 		include ($_SERVER['DOCUMENT_ROOT'].'/../views/office/ListOffices.php');
+		include ($_SERVER['DOCUMENT_ROOT'].'/../views/site/footer.php');
 	}
 
 	public function actionCreateOffice() {
@@ -33,7 +35,10 @@ class OfficeController{
 			$officeRecord = new RecordOffices();
 			$office = $officeRecord->getOffice($id);
 
-			include_once ('../views/office/UpdateOfficeForm.php');
+			$customer = "CustomerName";
+			$test = "TestName";
+			$days = ['mon','tue','wed'];
+			View::Render('../views/office/UpdateOfficeForm.php',[$office,$customer,$test,$days,'string']);
 
 		}catch(Exception $e){
 			echo $e->getMessage();

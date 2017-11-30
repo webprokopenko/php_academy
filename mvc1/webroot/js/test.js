@@ -1,0 +1,1 @@
+console.log("Files test.js include");

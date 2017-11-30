@@ -18,5 +18,6 @@
 
         <?php endforeach;?>
     </div>
+<script src="/js/test.js"></script>
 </body>
 </html>
