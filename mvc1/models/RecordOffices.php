@@ -14,12 +14,14 @@ class RecordOffices{
 	}
 
 	private function getConnection(){
-		$params = require_once '../config/db_params.php';
-		$dsn = "mysql:host={$params['host']}; dbname={$params['dbname']}";
-		$db = new PDO($dsn,$params['user'],$params['password']);
-		$db->exec("set names utf8");
+		$this->db =MySQL::getConnection();
+		$this->db =MySQL::getConnection();
+		$this->db =MySQL::getConnection();
+		$this->db =MySQL::getConnection();
+		$this->db =MySQL::getConnection();
+		$this->db =MySQL::getConnection();
+		$this->db =MySQL::getConnection();
 
-		$this->db = $db;
 	}
 	public function createNewOffice(Office $office){
 

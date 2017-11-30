@@ -13,7 +13,7 @@
                     <div class="ofiice-city">City: <?=$office['city']?></div>
                     <div class="ofiice-address">Address: <?=$office['address']?></div>
                     <div class="ofiice-phone">Phone: <?=$office['phone']?></div>
-                    <div class="office-update"><a href="updateOffice/<?=$office['id']?>">Update office</a></div>
+                    <div class="office-update"><a href="Office/updateOffice/<?=$office['id']?>">Update office</a></div>
                 </h5>
 
         <?php endforeach;?>

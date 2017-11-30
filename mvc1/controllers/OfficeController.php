@@ -40,4 +40,20 @@ class OfficeController{
 		}
 	}
 
+	public function actionSingletone(){
+		$singletone = Singletone::createInstance();
+		$singletone->iterate = 1;
+		echo $singletone->iterate;
+		var_dump($singletone);
+
+
+
+		$signetone2 = Singletone::createInstance();
+		echo $signetone2->iterate;
+
+		$signetone2->import();
+
+		var_dump($signetone2);
+	}
+
 }
